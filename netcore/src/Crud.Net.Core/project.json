@@ -1,5 +1,5 @@
 {
-  "copyright": "Copyright (C) 2016 Frankly Coded Ltd.",
+  "copyright": "Copyright (C) 2016 Peter Frank",
   "authors": [ "Peter Frank" ],
   "title": "Crud.Net.Core",
   "description": "Core component of the CRUD.NET package family, providing support for DDD-inspired C.R.U.D. functionality of .NET REST APIs and Microservices",
