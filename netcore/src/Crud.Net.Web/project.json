@@ -1,5 +1,22 @@
 {
+  "copyright": "Copyright (C) 2016 Peter Frank",
+  "authors": [ "Peter Frank" ],
+  "title": "Crud.Net.Web",
+  "description": "Api component of the CRUD.NET package family, providing support for DDD-inspired C.R.U.D. functionality of .NET REST APIs and Microservices",
+  "name": "Crud.Net.Web",
   "version": "0.1.0",
+
+  "packOptions": {
+    "requireLicenseAcceptance": false,
+    "tags": [ "web", "webapi", "microservice", "crud", ".net", "ddd", "repository", "api" ],
+    // "iconUrl": "https://raw.githubusercontent.com/nunit/dotnet-test-nunit/master/nunit_256.png",
+    "licenseUrl": "https://raw.githubusercontent.com/franklycoded/CRUD.NET/master/LICENSE.md",
+    "projectUrl": "https://github.com/franklycoded/CRUD.NET",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/franklycoded/CRUD.NET"
+    }
+  },
 
   "dependencies": {
     "NETStandard.Library": "1.6.0",
