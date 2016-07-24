@@ -5,7 +5,7 @@ namespace FranklyCoded.CRUD.Core.Service
     /// <summary>
     /// Generic service class for CRUD operations
     /// </summary>
-    public interface IDomainService<TEntity, TDto> 
+    public interface ICrudService<TEntity, TDto> 
     {
         /// <summary>
         /// Gets the business object by id

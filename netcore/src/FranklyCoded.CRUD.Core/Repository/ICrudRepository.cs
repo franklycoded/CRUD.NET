@@ -5,7 +5,7 @@ namespace FranklyCoded.CRUD.Core.Repository
     /// <summary>
     /// Repository for the specified entity
     /// </summary>
-    public interface IRepository<TEntity>
+    public interface ICrudRepository<TEntity>
     {
         /// <summary>
         /// Retrieves the entity by id

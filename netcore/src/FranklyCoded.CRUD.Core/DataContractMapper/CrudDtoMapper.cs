@@ -3,7 +3,7 @@ using FranklyCoded.CRUD.Core.DataContract;
 
 namespace FranklyCoded.CRUD.Core.DataContractMapper
 {
-    public abstract class DataContractMapper<TEntity, TDto> : IDataContractMapper<TEntity, TDto> 
+    public abstract class CrudDtoMapper<TEntity, TDto> : ICrudDtoMapper<TEntity, TDto> 
     where TEntity : class, IEntity, new()
     where TDto : class, ICrudDto, new()
     {

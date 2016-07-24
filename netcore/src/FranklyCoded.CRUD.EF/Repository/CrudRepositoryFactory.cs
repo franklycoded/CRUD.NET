@@ -8,7 +8,7 @@ namespace FranklyCoded.CRUD.EF.Repository
     /// <summary>
     /// <see cref="IRepositoryFactory" />
     /// </summary>
-    public class RepositoryFactory<TContext> : IRepositoryFactory<TContext>
+    public class CrudRepositoryFactory<TContext> : ICrudRepositoryFactory<TContext>
     {
         protected readonly IUnitOfWorkScope _unitOfWorkScope;
         
@@ -16,7 +16,7 @@ namespace FranklyCoded.CRUD.EF.Repository
         /// Creates a new instance of the Repository Factory
         /// </summary>
         /// <param name="unitOfWorkScope">The unit of work scope to use to retrieve UnitOfWorkContexts</param>
-        public RepositoryFactory(IUnitOfWorkScope unitOfWorkScope)
+        public CrudRepositoryFactory(IUnitOfWorkScope unitOfWorkScope)
         {
             if(unitOfWorkScope == null) throw new ArgumentNullException(nameof(unitOfWorkScope));
             
@@ -26,9 +26,9 @@ namespace FranklyCoded.CRUD.EF.Repository
         /// <summary>
         /// <see cref="IRepositoryFactory.GetRepository<TEntity>" />
         /// </summary>
-        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : class, IEntity
+        public ICrudRepository<TEntity> GetRepository<TEntity>() where TEntity : class, IEntity
         {
-            return new Repository<TEntity>(_unitOfWorkScope.GetContext<TContext>());
+            return new CrudRepository<TEntity>(_unitOfWorkScope.GetContext<TContext>());
         }
     }
 }

@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FranklyCoded.CRUD.EF.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
+    public class CrudRepository<TEntity> : ICrudRepository<TEntity> where TEntity : class, IEntity
     {
         protected readonly DbContext _context;
         
-        public Repository(IUnitOfWorkContext unitOfWorkContext)
+        public CrudRepository(IUnitOfWorkContext unitOfWorkContext)
         {
             if(unitOfWorkContext == null) throw new ArgumentNullException(nameof(unitOfWorkContext));
             

@@ -3,7 +3,7 @@ namespace FranklyCoded.CRUD.Core.DataContractMapper
     /// <summary>
     /// Maps entity to dto and vice versa
     /// </summary>
-    public interface IDataContractMapper<TEntity, TDto>
+    public interface ICrudDtoMapper<TEntity, TDto>
     {
         /// <summary>
         /// Maps the given entity to a dto

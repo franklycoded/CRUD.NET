@@ -11,12 +11,12 @@ namespace FranklyCoded.CRUD.Core.Service
     /// <summary>
     /// <see cref="IDomainService" />
     /// </summary>
-    public class DomainService<TContext, TEntity, TDto> : IDomainService<TEntity, TDto> where TContext : class where TEntity : class, IEntity 
+    public class CrudService<TContext, TEntity, TDto> : ICrudService<TEntity, TDto> where TContext : class where TEntity : class, IEntity 
     where TDto: class, ICrudDto
     {
         protected readonly IUnitOfWork _unitOfWork;
-        protected readonly IRepository<TEntity> _repository;
-        protected readonly IDataContractMapper<TEntity, TDto> _dataContractMapper;
+        protected readonly ICrudRepository<TEntity> _repository;
+        protected readonly ICrudDtoMapper<TEntity, TDto> _dataContractMapper;
 
         /// <summary>
         /// Creates a new instance of the CRUD Manager
@@ -24,7 +24,7 @@ namespace FranklyCoded.CRUD.Core.Service
         /// <param name="unitOfWork">The unit of work instance to use for persistence</param>
         /// <param name="repository">The repository to use for data persistence</param>
         /// <param name="dataContractMapper">The dto mapper</param>
-        public DomainService(IUnitOfWork unitOfWork, IRepository<TEntity> repository, IDataContractMapper<TEntity, TDto> dataContractMapper)
+        public CrudService(IUnitOfWork unitOfWork, ICrudRepository<TEntity> repository, ICrudDtoMapper<TEntity, TDto> dataContractMapper)
         {
             if(unitOfWork == null) throw new ArgumentNullException(nameof(unitOfWork));
             if(repository == null) throw new ArgumentNullException(nameof(repository));
