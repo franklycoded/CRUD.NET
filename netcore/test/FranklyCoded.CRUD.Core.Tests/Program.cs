@@ -3,7 +3,7 @@ using System.Reflection;
 using NUnit.Common;
 using NUnitLite;
 
-namespace FranklyCoded.CRUD.Core.Tests
+namespace Crud.Net.Core.Tests
 {
     public class Program
     {
