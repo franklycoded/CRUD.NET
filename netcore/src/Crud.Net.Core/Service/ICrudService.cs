@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 namespace Crud.Net.Core.Service
 {
     /// <summary>
-    /// Generic service class for CRUD operations
+    /// Generic application-level interface for CRUD operations
     /// </summary>
     public interface ICrudService<TEntity, TDto> 
     {

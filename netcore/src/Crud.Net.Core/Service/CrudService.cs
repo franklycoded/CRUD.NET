@@ -9,7 +9,7 @@ using Crud.Net.Core.Repository;
 namespace Crud.Net.Core.Service
 {
     /// <summary>
-    /// <see cref="IDomainService" />
+    /// Generic application-level class for CRUD operations
     /// </summary>
     public class CrudService<TContext, TEntity, TDto> : ICrudService<TEntity, TDto> where TContext : class where TEntity : class, IEntity 
     where TDto: class, ICrudDto
@@ -19,11 +19,11 @@ namespace Crud.Net.Core.Service
         protected readonly ICrudDtoMapper<TEntity, TDto> _dataContractMapper;
 
         /// <summary>
-        /// Creates a new instance of the CRUD Manager
+        /// Creates a new instance of the CrudService
         /// </summary>
-        /// <param name="unitOfWork">The unit of work instance to use for persistence</param>
-        /// <param name="repository">The repository to use for data persistence</param>
-        /// <param name="dataContractMapper">The dto mapper</param>
+        /// <param name="unitOfWork">The unit of work instance to persist data changes to the context</param>
+        /// <param name="repository">The repository for data manipulation</param>
+        /// <param name="dataContractMapper">The mapper that translates between dtos and entities</param>
         public CrudService(IUnitOfWork unitOfWork, ICrudRepository<TEntity> repository, ICrudDtoMapper<TEntity, TDto> dataContractMapper)
         {
             if(unitOfWork == null) throw new ArgumentNullException(nameof(unitOfWork));
@@ -36,7 +36,7 @@ namespace Crud.Net.Core.Service
         }
 
         /// <summary>
-        /// <see cref="IDomainService.AddAsync" />
+        /// <see cref="ICrudService.AddAsync" />
         /// </summary>
         public async Task<TDto> AddAsync(TDto dto)
         {
@@ -55,7 +55,7 @@ namespace Crud.Net.Core.Service
         }
 
         /// <summary>
-        /// <see cref="IDomainService.DeleteAsync" />
+        /// <see cref="ICrudService.DeleteAsync" />
         /// </summary>
         public async Task<bool> DeleteAsync(long id)
         {
@@ -70,7 +70,7 @@ namespace Crud.Net.Core.Service
         }
 
         /// <summary>
-        /// <see cref="IDomainService.GetByIdAsync" />
+        /// <see cref="ICrudService.GetByIdAsync" />
         /// </summary>
         public async Task<TDto> GetByIdAsync(long id)
         {
@@ -84,7 +84,7 @@ namespace Crud.Net.Core.Service
         }
 
         /// <summary>
-        /// <see cref="IDomainService.UpdateAsync" />
+        /// <see cref="ICrudService.UpdateAsync" />
         /// </summary>
         public async Task<TDto> UpdateAsync(TDto dto)
         {

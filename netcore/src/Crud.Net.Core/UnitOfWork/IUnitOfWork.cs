@@ -4,19 +4,19 @@ using System.Threading.Tasks;
 namespace Crud.Net.Core.UnitOfWork
 {
     /// <summary>
-    /// Interface to save changes across UnitOfWorkContexts
+    /// Interface to save changes made against the managed UnitOfWorkContexts
     /// </summary>
     public interface IUnitOfWork : IDisposable
     {
         /// <summary>
-        /// Saves the changes across all maintained UnitOfWorkContexts 
+        /// Saves the changes across all managed UnitOfWorkContexts 
         /// </summary>
         void SaveChanges();
         
         /// <summary>
-        /// Saves the changes asynchronously across all maintained UnitOfWorkContexts
+        /// Saves the changes asynchronously across all managed UnitOfWorkContexts
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The number of entities persisted</returns>
         Task<int> SaveChangesAsync();
     }
 }
