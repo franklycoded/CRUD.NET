@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 namespace Crud.Net.Core.Repository
 {
     /// <summary>
-    /// Repository for the specified entity
+    /// Generic repository for CRUD operations
     /// </summary>
     public interface ICrudRepository<TEntity>
     {

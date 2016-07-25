@@ -3,8 +3,8 @@ using System;
 namespace Crud.Net.Core.DataModel
 {
     /// <summary>
-    /// This is a temporary measure until EF7 has the Find() method implemented.
-    /// Provides an easy way to get the Id of the entity in a generic repository for CRUD operations
+    /// Interface for Crud.Net data model entities
+    /// Forces the data model to have Id, creation and modification date fiels for every resource
     /// </summary>
     public interface IEntity
     {

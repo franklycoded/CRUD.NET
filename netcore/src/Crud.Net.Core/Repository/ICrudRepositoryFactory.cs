@@ -8,7 +8,7 @@ namespace Crud.Net.Core.Repository
     public interface ICrudRepositoryFactory<TContext>
     {
         /// <summary>
-        /// Creates a new repository that acts on the TEntity objects via ordinary CRUD operations
+        /// Creates a new repository that acts on the TEntity objects via CRUD operations
         /// </summary>
         /// <returns>The repository for TEntity objects</returns>
         ICrudRepository<TEntity> GetRepository<TEntity>() where TEntity : class, IEntity;

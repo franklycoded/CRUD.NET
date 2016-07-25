@@ -1,7 +1,7 @@
 namespace Crud.Net.Core.DataContractMapper
 {
     /// <summary>
-    /// Maps entity to dto and vice versa
+    /// Interface for generic dto to entity and entity to dto mapping
     /// </summary>
     public interface ICrudDtoMapper<TEntity, TDto>
     {
