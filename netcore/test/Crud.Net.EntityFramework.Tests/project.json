@@ -1,11 +1,11 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
 
     "dependencies": {
         "dotnet-test-nunit": "3.4.0-beta-1",
         "NUnit": "3.4.1",
         "Moq": "4.6.36-alpha",
-        "Crud.Net.EntityFramework": "0.2.0"
+        "Crud.Net.EntityFramework": "0.3.0"
     },
 
     "testRunner": "nunit",

@@ -4,7 +4,7 @@
   "title": "Crud.Net.EntityFramework",
   "description": "EntityFramework-specific component of the CRUD.NET package family, providing support for DDD-inspired C.R.U.D. functionality of .NET REST APIs and Microservices",
   "name": "Crud.Net.EntityFramework",
-  "version": "0.2.0",
+  "version": "0.3.0",
 
   "packOptions": {
     "requireLicenseAcceptance": false,
@@ -21,7 +21,7 @@
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "Microsoft.EntityFrameworkCore": "1.0.0",
-    "Crud.Net.Core": "0.2.0"
+    "Crud.Net.Core": "0.3.0"
   },
 
   "frameworks": {
