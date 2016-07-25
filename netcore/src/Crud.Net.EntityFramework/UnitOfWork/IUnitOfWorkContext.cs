@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,7 +7,7 @@ namespace Crud.Net.EntityFramework.UnitOfWork
     /// <summary>
     /// Abstraction of top of the dbcontext for better testability
     /// </summary>
-    public interface IUnitOfWorkContext
+    public interface IUnitOfWorkContext : IDisposable
     {
         /// <summary>
         /// Gets the EF db context

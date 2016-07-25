@@ -85,7 +85,7 @@ namespace Crud.Net.EntityFramework.UnitOfWork
                     if(_contextDictionary != null){
                         foreach (var unityContext in _contextDictionary)
                         {
-                            unityContext.Value.Context.Dispose();
+                            unityContext.Value.Dispose();
                         }
 
                         _contextDictionary.Clear();
