@@ -3,7 +3,7 @@ using Crud.Net.Core.UnitOfWork;
 namespace Crud.Net.EntityFramework.UnitOfWork
 {
     /// <summary>
-    /// Interface of the UnitOfWorkScope
+    /// Creates and maintains cached versions of UnitOfWorkContexts. Useful when data changes to one or multiple data sources have to be made but restricted to a single connection per data store.
     /// </summary>
     public interface IUnitOfWorkScope : IUnitOfWork
     {

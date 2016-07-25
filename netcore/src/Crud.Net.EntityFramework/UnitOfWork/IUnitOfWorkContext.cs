@@ -5,25 +5,25 @@ using Microsoft.EntityFrameworkCore;
 namespace Crud.Net.EntityFramework.UnitOfWork
 {
     /// <summary>
-    /// Abstraction of top of the dbcontext for better testability
+    /// Abstraction of top of the EntityFramework DbContext to support the unit of work pattern
     /// </summary>
     public interface IUnitOfWorkContext : IDisposable
     {
         /// <summary>
-        /// Gets the EF db context
+        /// Gets the EntityFramework DbContext
         /// </summary>
         /// <returns></returns>
         DbContext Context { get; }
         
         /// <summary>
-        /// Saves changes to the EF db context
+        /// Saves changes to the EntityFramework DbContext
         /// </summary>
         void SaveChanges();
         
         /// <summary>
-        /// Saves changes to the EF db context asynchronously
+        /// Saves changes to the EntityFramework DbContext asynchronously
         /// </summary>
-        /// <returns>The Task object of the async operation</returns>
+        /// <returns>The number of persisted entities</returns>
         Task<int> SaveChangesAsync();
     }
 }

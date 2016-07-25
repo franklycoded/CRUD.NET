@@ -15,7 +15,7 @@ namespace Crud.Net.EntityFramework.Repository
         /// <summary>
         /// Creates a new instance of the Repository Factory
         /// </summary>
-        /// <param name="unitOfWorkScope">The unit of work scope to use to retrieve UnitOfWorkContexts</param>
+        /// <param name="unitOfWorkScope">The unit of work scope to be used to retrieve UnitOfWorkContexts</param>
         public CrudRepositoryFactory(IUnitOfWorkScope unitOfWorkScope)
         {
             if(unitOfWorkScope == null) throw new ArgumentNullException(nameof(unitOfWorkScope));

@@ -14,7 +14,7 @@ namespace Crud.Net.EntityFramework.UnitOfWork
         /// <summary>
         /// Creates a new instance of the UnitOfWorkContext
         /// </summary>
-        /// <param name="context">The EF db context</param>
+        /// <param name="context">The EntityFramework db context</param>
         public UnitOfWorkContext(DbContext context){
             if(context == null) throw new ArgumentNullException(nameof(context));
             

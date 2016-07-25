@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 namespace Crud.Net.EntityFramework.UnitOfWork
 {
     /// <summary>
-    /// Class to cache and manage the lifetime of resolved UnitOfWorkContexts
+    /// Creates and maintains cached versions of UnitOfWorkContexts. Allows saving the changes in all contexts synchronously or asynchronously. 
+    /// Useful when data changes to one or multiple data sources have to be made but restricted to a single connection per data store.
     /// </summary>
     public class UnitOfWorkScope : IUnitOfWorkScope
     {
@@ -96,7 +97,9 @@ namespace Crud.Net.EntityFramework.UnitOfWork
             }
         }
 
-        // This code added to correctly implement the disposable pattern.
+        /// <summary>
+        /// Disposes of the disposable resources of the UnitOfWorkScope class instance
+        /// </summary>
         public void Dispose()
         {
             Dispose(true);

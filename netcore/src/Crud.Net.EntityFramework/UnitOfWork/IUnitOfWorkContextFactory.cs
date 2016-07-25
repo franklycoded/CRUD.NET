@@ -1,7 +1,7 @@
 namespace Crud.Net.EntityFramework.UnitOfWork
 {
     /// <summary>
-    /// Factory to create IUnitOfWorkContext-s
+    /// Factory to create IUnitOfWorkContexts
     /// </summary>
     public interface IUnitOfWorkContextFactory
     {
