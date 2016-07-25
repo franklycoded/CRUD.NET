@@ -39,9 +39,9 @@ namespace Crud.Net.Web.Controller
 
                 return Ok(dto);
             }
-            catch(Exception){
+            catch(Exception ex){
                 // Log error
-                return StatusCode(500, "Error while getting item by id " + id + ". See logs for details!");
+                return StatusCode(500, "Error while getting item by id " + id + ": " + ex);
             }
         }
 
@@ -57,10 +57,10 @@ namespace Crud.Net.Web.Controller
                 var newDto = await Service.AddAsync(dto);
                 return Ok(newDto);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // log error
-                return StatusCode(500, "Error while adding item. See logs for details!");
+                return StatusCode(500, "Error while adding item. " + ex);
             }
         }
 
@@ -78,9 +78,9 @@ namespace Crud.Net.Web.Controller
 
                 return Ok(updatedDto);
             }
-            catch(Exception){
+            catch(Exception ex){
                 // Log error
-                return StatusCode(500, "Error while updating item! See logs for details!");
+                return StatusCode(500, "Error while updating item! " + ex);
             }
         }
 
@@ -99,10 +99,10 @@ namespace Crud.Net.Web.Controller
 
                 return Ok();
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
                 // log error
-                return StatusCode(500, "Error while deleting item with id " + id + ". See logs for details!");
+                return StatusCode(500, "Error while deleting item with id " + id + ". " + ex);
             }
         }
     }
