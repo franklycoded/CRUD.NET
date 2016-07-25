@@ -12,17 +12,17 @@ namespace Crud.Net.Web.Controller
     /// </summary>
     public class CrudController<TEntity, TDto>: Microsoft.AspNetCore.Mvc.Controller where TEntity: class, IEntity where TDto: class, ICrudDto
     {
-        protected readonly ICrudService<TEntity, TDto> Manager;
+        protected readonly ICrudService<TEntity, TDto> Service;
 
         /// <summary>
-        /// Creates a new instance of the CRUDController
+        /// Creates a new instance of the CrudController
         /// </summary>
-        /// <param name="manager">The manager to use for data retrieval and other operations</param>
-        public CrudController(ICrudService<TEntity, TDto> manager)
+        /// <param name="manager">The CrudService to be used for data retrieval and other operations</param>
+        public CrudController(ICrudService<TEntity, TDto> service)
         {
-            if(manager == null) throw new ArgumentNullException(nameof(manager));
+            if(service == null) throw new ArgumentNullException(nameof(service));
 
-            Manager = manager;
+            Service = service;
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Crud.Net.Web.Controller
         [HttpGet("{id}")]
         public virtual async Task<IActionResult> GetById(long id){
             try {
-                var dto = await Manager.GetByIdAsync(id);
+                var dto = await Service.GetByIdAsync(id);
 
                 if(dto == null) return NotFound();
 
@@ -54,7 +54,7 @@ namespace Crud.Net.Web.Controller
         public virtual async Task<IActionResult> Post([FromBody] TDto dto){
             try
             {
-                var newDto = await Manager.AddAsync(dto);
+                var newDto = await Service.AddAsync(dto);
                 return Ok(newDto);
             }
             catch (Exception)
@@ -72,7 +72,7 @@ namespace Crud.Net.Web.Controller
         [HttpPut]
         public virtual async Task<IActionResult> Put([FromBody] TDto dto){
             try {
-                var updatedDto = await Manager.UpdateAsync(dto);
+                var updatedDto = await Service.UpdateAsync(dto);
 
                 if(updatedDto == null) return NotFound();
 
@@ -93,7 +93,7 @@ namespace Crud.Net.Web.Controller
         public async Task<IActionResult> Delete(long id){
             try
             {
-                var isDeleteSuccessful = await Manager.DeleteAsync(id);
+                var isDeleteSuccessful = await Service.DeleteAsync(id);
 
                 if(isDeleteSuccessful == false) return NotFound();
 
